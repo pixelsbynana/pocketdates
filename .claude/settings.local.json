@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(rm -rf /Users/nana/Documents/pocketdates/app/dev-invite-test /Users/nana/Documents/pocketdates/app/dev-partner-card-test *)",
+      "Bash(tail -100 /tmp/pocketdates-dev.log 2>/dev/null | grep -i -A 5 \"couldn't create invite\\\\|error\" | tail -60)",
+      "Read(//private/tmp/**)",
+      "Bash(rm -f /private/tmp/claude-501/-Users-nana-Documents-pocketdates/ba2657ca-27a2-4e3b-bc3b-71c4e1b0646a/scratchpad/pw/sidebar-flush-*.png /private/tmp/claude-501/-Users-nana-Documents-pocketdates/ba2657ca-27a2-4e3b-bc3b-71c4e1b0646a/scratchpad/pw/test-sidebar-flush.js)",
+      "Bash(rm -f /private/tmp/claude-501/-Users-nana-Documents-pocketdates/ba2657ca-27a2-4e3b-bc3b-71c4e1b0646a/scratchpad/pw/detail-*.png /private/tmp/claude-501/-Users-nana-Documents-pocketdates/ba2657ca-27a2-4e3b-bc3b-71c4e1b0646a/scratchpad/pw/test-nearby-detail.js /private/tmp/claude-501/-Users-nana-Documents-pocketdates/ba2657ca-27a2-4e3b-bc3b-71c4e1b0646a/scratchpad/pw/test-athome-detail.js)"
+    ],
+    "additionalDirectories": [
+      "/private/tmp/claude-501/-Users-nana-Documents-pocketdates/ba2657ca-27a2-4e3b-bc3b-71c4e1b0646a/scratchpad/pw"
+    ]
+  }
+}

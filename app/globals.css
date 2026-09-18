@@ -1,26 +1,205 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-handwritten: var(--font-handwritten);
+  --font-heading: var(--font-serif);
+
+  /* Pocket Dates palette */
+  --color-cream: var(--cream);
+  --color-beige: var(--beige);
+  --color-brown: var(--brown);
+  --color-brown-dark: var(--brown-dark);
+  --color-rose: var(--rose);
+  --color-sage: var(--sage);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Warm neutral palette */
+  --cream: #f8f3ec;
+  --beige: #ede2d3;
+  --brown: #8b6f5a;
+  --brown-dark: #3d3028;
+  --rose: #d9a6a6;
+  --sage: #aab7a0;
+
+  --background: var(--cream);
+  --foreground: var(--brown-dark);
+  --card: #fffdfa;
+  --card-foreground: var(--brown-dark);
+  --popover: #fffdfa;
+  --popover-foreground: var(--brown-dark);
+  --primary: var(--brown);
+  --primary-foreground: var(--cream);
+  --secondary: var(--beige);
+  --secondary-foreground: var(--brown-dark);
+  --muted: #f1e9dd;
+  --muted-foreground: #8a7a6a;
+  --accent: var(--rose);
+  --accent-foreground: var(--brown-dark);
+  --destructive: oklch(0.577 0.215 27.325);
+  --border: #e3d6c3;
+  --input: #e3d6c3;
+  --ring: var(--rose);
+  --chart-1: var(--rose);
+  --chart-2: var(--sage);
+  --chart-3: var(--brown);
+  --chart-4: #c9b79c;
+  --chart-5: var(--brown-dark);
+  --radius: 1.15rem;
+  --sidebar: var(--cream);
+  --sidebar-foreground: var(--brown-dark);
+  --sidebar-primary: var(--brown);
+  --sidebar-primary-foreground: var(--cream);
+  --sidebar-accent: var(--beige);
+  --sidebar-accent-foreground: var(--brown-dark);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--rose);
+}
+
+.dark {
+  --cream: #2a2119;
+  --beige: #362b21;
+  --brown: #c9ac8f;
+  --brown-dark: #f3e9dd;
+  --rose: #dba8a3;
+  --sage: #a3b199;
+
+  --background: #211a14;
+  --foreground: #f3e9dd;
+  --card: #2a2119;
+  --card-foreground: #f3e9dd;
+  --popover: #2a2119;
+  --popover-foreground: #f3e9dd;
+  --primary: #dbc0a4;
+  --primary-foreground: #2a2119;
+  --secondary: #362b21;
+  --secondary-foreground: #f3e9dd;
+  --muted: #2f2620;
+  --muted-foreground: #bdab98;
+  --accent: #5a463b;
+  --accent-foreground: #f3e9dd;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #3c3125;
+  --input: #3c3125;
+  --ring: #dba8a3;
+  --chart-1: var(--rose);
+  --chart-2: var(--sage);
+  --chart-3: var(--brown);
+  --chart-4: #c9b79c;
+  --chart-5: #f3e9dd;
+  --sidebar: #211a14;
+  --sidebar-foreground: #f3e9dd;
+  --sidebar-primary: #dbc0a4;
+  --sidebar-primary-foreground: #2a2119;
+  --sidebar-accent: #362b21;
+  --sidebar-accent-foreground: #f3e9dd;
+  --sidebar-border: #3c3125;
+  --sidebar-ring: #dba8a3;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .font-handwritten {
+    font-family: var(--font-handwritten);
+  }
+
+  /* iOS-safe bottom spacing for the bottom nav / sticky CTAs */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  /* Breathing room above page content, on top of any notch inset — used
+     instead of pt-safe alone wherever a page's content sits directly under
+     the top edge, since safe-area-inset-top is 0 on most devices. */
+  .pt-page {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 1.5rem);
+  }
+  /* Cancels pt-page on the parent layout, for pages whose content (e.g. a
+     full-bleed hero image) should sit flush against the top edge instead. */
+  .-mt-page {
+    margin-top: calc(-1 * (env(safe-area-inset-top, 0px) + 1.5rem));
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
