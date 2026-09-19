@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Plus_Jakarta_Sans, Caveat } from "next/font/google";
 import { MotionConfig } from "framer-motion";
 import { Toaster } from "@/components/ui/sonner";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const sans = Plus_Jakarta_Sans({
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <MotionConfig reducedMotion="user">{children}</MotionConfig>
         <Toaster position="top-center" />
+        <Analytics />
       </body>
     </html>
   );
